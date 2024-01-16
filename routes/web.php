@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    // DB::table('students')->where('id','=',2)->delete();
+
+
     return view('index');
 });
 
