@@ -3,7 +3,11 @@
 @section('content')
     <h1>Enrégistrer un élève</h1>
     <div>
-        <form action="">
+
+        <form action="{{ route('index.store') }}" method="POST">
+
+            @csrf
+
             <input type="text" name="firstName" placeholder="First name">
             <input type="text" name="lastName" placeholder="Last name">
             <input type="number" name="age" placeholder="Age">

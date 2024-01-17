@@ -16,6 +16,11 @@ class StudentController extends Controller
         return view('success',['students' => Student::all()]);
     }
 
+    public function add()
+    {
+        return view('index');
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -33,7 +38,7 @@ class StudentController extends Controller
     {
         $new_student = Student::created($request->validated());
 
-        return to_route('succes');
+        return to_route('success')->with('success','Elève bien ajouté');
     }
 
     /**

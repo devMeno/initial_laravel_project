@@ -19,6 +19,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [StudentController::class,'index']);
 
+Route::get('/index', [StudentController::class,'add']);
+Route::post('/index', [StudentController::class,'store']);
+
 Route::get('/app',function(Request $request) {
     return [
         'All'=> $request->all(),
