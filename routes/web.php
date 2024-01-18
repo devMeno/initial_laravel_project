@@ -19,12 +19,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [StudentController::class,'index']);
 
-Route::get('/index', [StudentController::class,'add']);
-Route::post('/index', [StudentController::class,'store']);
+// Route::get('/index', [StudentController::class,'add']);
+// Route::post('/index', [StudentController::class,'store']);
 
-Route::get('/app',function(Request $request) {
-    return [
-        'All'=> $request->all(),
-        'name'=>'Amen'
-    ];
+Route::prefix('index')->name('index.')->group(function(){
+    Route::resource('student',StudentController::class);
 });
+
+Route::get('add', [StudentController::class,'add']);

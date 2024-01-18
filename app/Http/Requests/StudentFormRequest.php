@@ -22,12 +22,12 @@ class StudentFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'firstName'=>['required','min:3'],
-            'lastName'=>['required','min:3'],
+            'first_name'=>['required','min:3'],
+            'last_name'=>['required','min:3'],
             'age'=>['required','integer','min:3'],
             'sex'=>['required'],
             'class'=>['required','min:2'],
-            'stud'=>['boolean'],
+            'isStudious'=>['boolean'],
         ];
     }
 }

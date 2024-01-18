@@ -28,7 +28,9 @@ class StudentController extends Controller
     {
         $new_student = new Student();
 
-        return view('success',['students' => Student::all()]);
+        $new_student->fill(['first_name'=>'LOKONON','isStudious'=>true]);
+
+        return view('index',['student' => new Student()]);
     }
 
     /**
@@ -36,9 +38,10 @@ class StudentController extends Controller
      */
     public function store(StudentFormRequest $request)
     {
-        $new_student = Student::created($request->validated());
+        $new_student = Student::create($request->validated());
+        // dd($request->validated());
 
-        return to_route('success')->with('success','Elève bien ajouté');
+        return to_route('index');
     }
 
     /**

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('age');
             $table->string('sex');
             $table->string('class');
-            $table->boolean('isStudious');
+            $table->boolean('isStudious')->default(true);
             $table->timestamps();
         });
     }
